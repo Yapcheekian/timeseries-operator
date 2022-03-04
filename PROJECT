@@ -1,0 +1,16 @@
+domain: extend-k8s.io
+layout:
+- go.kubebuilder.io/v3
+projectName: timeseries-operator
+repo: github.com/Yapcheekian/timeseries-operator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: extend-k8s.io
+  group: operator
+  kind: TimeseriesDB
+  path: github.com/Yapcheekian/timeseries-operator/api/v1
+  version: v1
+version: "3"

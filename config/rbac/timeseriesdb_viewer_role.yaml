@@ -1,0 +1,20 @@
+# permissions for end users to view timeseriesdbs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: timeseriesdb-viewer-role
+rules:
+- apiGroups:
+  - operator.extend-k8s.io
+  resources:
+  - timeseriesdbs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - operator.extend-k8s.io
+  resources:
+  - timeseriesdbs/status
+  verbs:
+  - get

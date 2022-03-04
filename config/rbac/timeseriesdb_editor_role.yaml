@@ -1,0 +1,24 @@
+# permissions for end users to edit timeseriesdbs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: timeseriesdb-editor-role
+rules:
+- apiGroups:
+  - operator.extend-k8s.io
+  resources:
+  - timeseriesdbs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - operator.extend-k8s.io
+  resources:
+  - timeseriesdbs/status
+  verbs:
+  - get
